@@ -28,7 +28,7 @@ class BirthdayForm(forms.ModelForm):
         # Указываем модель, на основе которой должна строиться форма.
         model = Birthday
         # Указываем, что надо отобразить все поля.
-        fields = '__all__'
+        exclude = ('author',)
 
     def clean_first_name(self):
         first_name = self.cleaned_data['first_name']
